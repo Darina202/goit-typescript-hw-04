@@ -20,9 +20,7 @@ const MenuActionContext = createContext<MenuAction>({
   onSelectedMenu: noop,
 });
 
-type PropsProvider = {
-  children: React.ReactNode; // Додати тип для children
-};
+type PropsProvider = { children: React.ReactNode };
 
 function MenuProvider({ children }: PropsProvider) {
   // Додати тип для SelectedMenu він повинен містити { id }
@@ -53,9 +51,7 @@ function MenuProvider({ children }: PropsProvider) {
   );
 }
 
-type PropsMenu = {
-  menus: Menu[]; // Додайте вірний тип для меню
-};
+type PropsMenu = { menus: Menu[] };
 
 function MenuComponent({ menus }: PropsMenu) {
   const { onSelectedMenu } = useContext(MenuActionContext);
